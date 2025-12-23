@@ -721,16 +721,6 @@ body {
       height: 50vmin;
       border-top-left-radius: 100%;
       border-left: 2vmin solid #079097;
-      background-image: linear-gradient(
-        to bottom,
-        transparent,
-        var(--dark-color) 60%
-      );
-      -webkit-mask-image: linear-gradient(to top, transparent 30%, #079097 60%);
-    }
-
-    &--1 {
-      animation: flower-g-right-ans 2.5s linear infinite;
     }
 
     &--2 {
@@ -949,6 +939,7 @@ body {
       border-top-left-radius: 100%;
       border-left: 2vmin solid #079097;
       -webkit-mask-image: linear-gradient(to top, transparent 25%, #079097 50%);
+      mask-image: linear-gradient(to top, transparent 25%, #079097 50%);
       position: relative;
       z-index: 1;
     }
@@ -1386,6 +1377,65 @@ body {
   0% {
     transform: scale(0);
   }
+}
+
+.flowers-wrapper {
+  transition: transform 2s ease-in-out;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.move-right .flowers-wrapper {
+  transform: translateX(25%);
+}
+
+/* Stop swinging animations when moving */
+.move-right .flower,
+.move-right .flower__g-long,
+.move-right .flower__g-right,
+.move-right .flower__g-front,
+.move-right .flower__g-fr,
+.move-right .flower__grass,
+.move-right .leaf {
+  animation: none !important;
+}
+
+.message-container {
+  position: fixed;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.move-right .message-container {
+  opacity: 1;
+}
+
+#typewriter-text {
+  color: #ffffff;
+  font-family: 'Playfair Display', 'Lora', serif;
+  font-size: 2.5vmin;
+  line-height: 1.6;
+  font-weight: 400;
+  white-space: pre-wrap;
+}
+
+#typewriter-text::after {
+  content: '|';
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .not-loaded * {
