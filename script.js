@@ -13,7 +13,7 @@ window.addEventListener("load", () => {
 
 function startTypewriter() {
   const textElement = document.getElementById("typewriter-text");
-  const message = "Sup. \nWhere's my treat? \n\n";
+  const message = "Doctor arc unlocked. \nSo this is where the villain backstory begins. \n\n";
   let index = 0;
 
   function type() {
