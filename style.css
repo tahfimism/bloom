@@ -53,6 +53,7 @@ body {
 .flowers {
   position: relative;
   transform: scale(0.9);
+  top: 8vmin;
 }
 
 .flower {
@@ -453,6 +454,7 @@ body {
   }
 }
 .flower__grass__overlay {
+  display: none;
   position: absolute;
   top: -10%;
   right: 0%;
