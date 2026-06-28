@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
 
 function startTypewriter() {
   const textElement = document.getElementById("typewriter-text");
-  const message = "Doctor arc unlocked. \nSo this is where the villain backstory begins. \n\n";
+  const message = "We are all just seeds\nwaiting for our own season\nof twilight.\n\n";
   let index = 0;
 
   function type() {
@@ -123,7 +123,8 @@ function initTwilightGarden() {
     targetY = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
     
     if (cursorGlow) {
-      cursorGlow.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
+      cursorGlow.style.left = `${e.clientX}px`;
+      cursorGlow.style.top = `${e.clientY}px`;
       cursorGlow.style.opacity = 1;
     }
   });
